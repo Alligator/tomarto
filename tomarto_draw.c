@@ -14,7 +14,6 @@
 #define TM_FONT_WIDTH 12
 #define TM_FONT_HEIGHT 14
 
-// static char *glyphMap = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-={}|[]\\:\"'<>?;,.";
 static char *glyphMap = "0123456789:";
 
 static TmFont *font;
@@ -32,7 +31,6 @@ static void Error(HWND hWnd, wchar_t *message) {
         SendMessage(hWnd, WM_CLOSE, 0, 0);
     }
 }
-
 
 static LRESULT CALLBACK WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
     switch (uMsg) {

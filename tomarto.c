@@ -11,13 +11,6 @@ static double timeToBreak = TOMARTO_TIME_TO_BREAK;
 static bool running = false;
 static bool onBreak = false;
 
-// DONE: Break timer.
-// DONE: Change background colour when timer completes.
-// DONE: Better contrast? Red on blue kinda sucks.
-// DONE: The text doesn't seem centered.
-//   Nope, definitely centered.
-// DONE: Add an icon!
-// DONE: Perhaps find a bigger bitmap font?
 // TODO: Context menu might be nice.
 //   Bleh, this is weird. There's some commented out code that's the start of this.
 
@@ -46,8 +39,6 @@ void TomartoDraw(TmWindow *tw) {
 
     TmRGB textColour = running ? TmCreateRGB(TOMARTO_COLOUR_RUNNING) : TmCreateRGB(TOMARTO_COLOUR_PAUSED);
     TmText(tw, TOMARTO_WIN_WIDTH / 2, TOMARTO_WIN_HEIGHT / 2, formattedTime, textColour, 2, 1);
-
-    // TmText(tw, TOMARTO_WIN_WIDTH / 2, TOMARTO_WIN_HEIGHT / 2 - 25, "Tomarto", TmCreateRGB(TOMARTO_COLOUR_TEXT), 1, 1);
 
     if (TmIsKeyDown(tw, 'S')) {
         running = !running;

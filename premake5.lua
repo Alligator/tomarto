@@ -1,9 +1,9 @@
 workspace "tomarto"
-	location "build"
-	configurations { "Debug", "Release" }
+    location "build"
+    configurations { "Debug", "Release" }
 
 project "tomarto"
-	kind "WindowedApp"
+    kind "WindowedApp"
     language "C"
     targetdir "bin/%{cfg.buildcfg}"
 

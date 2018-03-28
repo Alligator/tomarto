@@ -1,7 +1,7 @@
 #pragma once
 
-#define TOMARTO_WIN_WIDTH 	   160
-#define TOMARTO_WIN_HEIGHT 	   60
+#define TOMARTO_WIN_WIDTH      160
+#define TOMARTO_WIN_HEIGHT     60
 #define TOMARTO_TIME_TO_RUN    1500 // 1500 seconds = 25 minutes
 #define TOMARTO_TIME_TO_BREAK  300  // 300 seconds = 5 minutes
 

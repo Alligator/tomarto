@@ -1,0 +1,2 @@
+#define RESOURCE_BMP_FONT_ID	101
+#define RESOURCE_ICON			102

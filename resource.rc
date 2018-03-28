@@ -1,0 +1,4 @@
+#include "resource.h"
+
+RESOURCE_BMP_FONT_ID RCDATA "bmpfont2.png"
+RESOURCE_ICON ICON "icon.ico"

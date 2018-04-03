@@ -10,11 +10,10 @@
 #include "resource.h"
 
 #define TM_DEFAULT_FONT_SIZE 12;
-#define TM_FONT_NAME "bmpfont2.png"
-#define TM_FONT_WIDTH 12
-#define TM_FONT_HEIGHT 14
+#define TM_FONT_WIDTH 10
+#define TM_FONT_HEIGHT 20
 
-static char *glyphMap = "0123456789:";
+static char *glyphMap = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-={}|[]\\:\"'<>?;,.";
 
 static TmFont *font;
 static bool running;
@@ -31,6 +30,7 @@ static void Error(HWND hWnd, wchar_t *message) {
         SendMessage(hWnd, WM_CLOSE, 0, 0);
     }
 }
+
 
 static LRESULT CALLBACK WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
     switch (uMsg) {

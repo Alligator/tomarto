@@ -38,7 +38,7 @@ void TomartoDraw(TmWindow *tw) {
     sprintf(formattedTime, "%02d:%02d", (int)diff / 60, (int)diff % 60);
 
     TmRGB textColour = running ? TmCreateRGB(TOMARTO_COLOUR_RUNNING) : TmCreateRGB(TOMARTO_COLOUR_PAUSED);
-    TmText(tw, TOMARTO_WIN_WIDTH / 2, TOMARTO_WIN_HEIGHT / 2, formattedTime, textColour, 2, 1);
+    TmText(tw, TOMARTO_WIN_WIDTH / 2, TOMARTO_WIN_HEIGHT / 2, formattedTime, textColour, 1, 1);
 
     if (TmIsKeyDown(tw, 'S')) {
         running = !running;

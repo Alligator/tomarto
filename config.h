@@ -8,5 +8,6 @@
 // Specify these as r, g, b
 #define TOMARTO_COLOUR_BG      44,  62,  80  // Background colour
 #define TOMARTO_COLOUR_TEXT    236, 240, 240 // Text colour
-#define TOMARTO_COLOUR_RUNNING 0,   228, 54  // Text colour when running
+#define TOMARTO_COLOUR_WORK    0,   228, 54  // Text colour when running
+#define TOMARTO_COLOUR_BREAK   255, 163, 0   // Text colour when on break
 #define TOMARTO_COLOUR_PAUSED  52,  152, 219 // Text colour when paused

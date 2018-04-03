@@ -27,7 +27,12 @@ void TomartoDraw(TmWindow *tw) {
     double diff = *currentTimeToRun - difftime(currentTime, startTime);
 
     // TODO rect function
-    TmRGB bg = (int)diff == 0 ? TmCreateRGB(TOMARTO_COLOUR_TEXT) : TmCreateRGB(TOMARTO_COLOUR_BG);
+    TmRGB bg;
+    if ((int)diff == 0) {
+        bg = onBreak ? TmCreateRGB(TOMARTO_COLOUR_BREAK) : TmCreateRGB(TOMARTO_COLOUR_WORK);
+    } else {
+        bg = TmCreateRGB(TOMARTO_COLOUR_BG);
+    }
     for (int x = 0; x < tw->w; x++) {
         for (int y = 0; y < tw->h; y++) {
             TmPixel(tw, x, y, bg);
@@ -37,7 +42,12 @@ void TomartoDraw(TmWindow *tw) {
     char formattedTime[100];
     sprintf(formattedTime, "%02d:%02d", (int)diff / 60, (int)diff % 60);
 
-    TmRGB textColour = running ? TmCreateRGB(TOMARTO_COLOUR_RUNNING) : TmCreateRGB(TOMARTO_COLOUR_PAUSED);
+    TmRGB textColour;
+    if (running) {
+        textColour = onBreak ? TmCreateRGB(TOMARTO_COLOUR_BREAK) : TmCreateRGB(TOMARTO_COLOUR_WORK);
+    } else {
+        textColour = TmCreateRGB(TOMARTO_COLOUR_PAUSED);
+    }
     TmText(tw, TOMARTO_WIN_WIDTH / 2, TOMARTO_WIN_HEIGHT / 2, formattedTime, textColour, 1, 1);
 
     if (TmIsKeyDown(tw, 'S')) {

@@ -28,7 +28,7 @@ void TomartoDraw(TmWindow *tw) {
 
     // TODO rect function
     TmRGB bg;
-    if ((int)diff == 0) {
+    if (running && (int)diff == 0) {
         bg = onBreak ? TmCreateRGB(TOMARTO_COLOUR_BREAK) : TmCreateRGB(TOMARTO_COLOUR_WORK);
     } else {
         bg = TmCreateRGB(TOMARTO_COLOUR_BG);
@@ -62,7 +62,7 @@ void TomartoDraw(TmWindow *tw) {
         TmQuit(tw);
     }
     if (TmIsKeyDown(tw, '=')) {
-        timeToRun += 10;
+        *currentTimeToRun += 10;
     }
     if (TmIsKeyDown(tw, '-')) {
         *currentTimeToRun -= 10;

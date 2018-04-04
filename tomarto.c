@@ -28,7 +28,7 @@ void TomartoDraw(TmWindow *tw) {
 
     // TODO rect function
     TmRGB bg;
-    if (running && (int)diff == 0) {
+    if ((int)diff == 0) {
         bg = onBreak ? TmCreateRGB(TOMARTO_COLOUR_BREAK) : TmCreateRGB(TOMARTO_COLOUR_WORK);
     } else {
         bg = TmCreateRGB(TOMARTO_COLOUR_BG);

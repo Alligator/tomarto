@@ -115,11 +115,17 @@ TmWindow *TmCreateWindow(int width, int height, const char* title) {
     rect.bottom = height;
     AdjustWindowRect(&rect, WS_OVERLAPPEDWINDOW, false);
 
+    RECT workArea;
+    SystemParametersInfo(SPI_GETWORKAREA, 0, &workArea, 0);
+    int screenWidth = workArea.right - workArea.left;
+    int screenHeight = workArea.bottom - workArea.top;
+
     HWND hWnd = CreateWindow(
         L"tomarto",
         wTitle,
         WS_POPUP | WS_SYSMENU,
-        CW_USEDEFAULT, CW_USEDEFAULT,
+        // Place the window in the bottom right corner of the screen
+        screenWidth - width, screenHeight - height,
         rect.right - rect.left,
         rect.bottom - rect.top,
         NULL,

@@ -62,10 +62,14 @@ void TomartoDraw(TmWindow *tw) {
         TmQuit(tw);
     }
     if (TmIsKeyDown(tw, '=')) {
-        *currentTimeToRun += 10;
+        if (running) {
+            startTime += 60;
+        } else {
+            *currentTimeToRun += 60;
+        }
     }
-    if (TmIsKeyDown(tw, '-')) {
-        *currentTimeToRun -= 10;
+    if (TmIsKeyDown(tw, '-') && !running) {
+        *currentTimeToRun -= 60;
         if (*currentTimeToRun < 0) {
             *currentTimeToRun = 0;
         }
